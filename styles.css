@@ -43,12 +43,19 @@ input {
   width: 90%;
   padding: 25px 50px 0px 50px;
   background-color: #f3f3f3;
-  min-height: 300px;
+  min-height: 600px;
 }
 .output-box {
   width: 75%;
 }
 #woo {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: #ab3423;
+  color: #f3f3f3;
+  padding: 10px 25px 10px 25px;
+}
+#woo2 {
   margin-top: 25px;
   margin-bottom: 25px;
   background-color: #ab3423;
@@ -61,7 +68,18 @@ input {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+#calories {
+  width: 65%;
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 #result {
+  padding-bottom: 75px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+#result2 {
   padding-bottom: 75px;
   padding-right: 15px;
   padding-left: 15px;
@@ -74,6 +92,9 @@ input {
   height: 100px;
   background-color: #ab3423;
   width: 100%;
+  color: #f3f3f3;
+}
+.footer a {
   color: #f3f3f3;
 }
 
@@ -120,6 +141,9 @@ img {
     min-height: 750px;
   }
   #ingredients {
+    width: 35%;
+  }
+  #calories {
     width: 35%;
   }
 }
