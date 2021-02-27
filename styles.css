@@ -1,7 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:"Merriweather", "Arial", sans-serif!important;
+}
 body {
-  font-size: 16px;
-  padding: 20px 100px 0px 100px;
-  background: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+  font-size: 12px;
+  /*padding: 20px 100px 0px 100px;*/
+  background-color: #ffffff;
+}
+.Yes {
+  display: flex;
+  background-color: #ab3423;
+  width: 100%;
+  height: 100px;
+  justify-content: center;
+  text-align: center;
+  color: #f3f3f3;
+  font-size: 32px;
+  align-items: center;
+}
+input {
+  margin: 25px;
+}
+.input-box {
+  width: 100%;
+}
+.pure-form {
+  width: 100%;
+}
+.body-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 90%;
+  padding: 25px 50px 0px 50px;
+  background-color: #f3f3f3;
+  min-height: 300px;
+}
+.output-box {
+  width: 75%;
+}
+#woo {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: #ab3423;
+  color: #f3f3f3;
+  padding: 10px 25px 10px 25px;
+}
+#ingredients {
+  width: 65%;
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#result {
+  padding-bottom: 75px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  background-color: #ab3423;
+  width: 100%;
+  color: #f3f3f3;
 }
 
 /* Form */
@@ -33,4 +106,20 @@ li {
 
 img {
   margin-top: 50px;
+}
+@media only screen and (min-width: 850px) {
+  body {
+    font-size: 24px;
+  }
+  .Yes {
+    font-size: 60px;
+  }
+  .body-content {
+    width: 75%;
+    padding: 150px 150px 0px 150px;
+    min-height: 750px;
+  }
+  #ingredients {
+    width: 35%;
+  }
 }

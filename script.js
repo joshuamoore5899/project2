@@ -30,7 +30,7 @@ function onClick(e) {
       console.log(json);
       for (let i = 0; i < json.length; i++) {
         let recipe = "";
-        recipe += json[i].title;
+        let name = json[i].title;
         //updateResult(json[i].title);
         let url2 = "https://api.spoonacular.com/recipes/" + json[i].id + "/information" + "?apiKey=1582ec83b96441669036ed721e4fd860";
         fetch(url2)
@@ -44,7 +44,8 @@ function onClick(e) {
             return response.json();
           }).then(function(json) {
             console.log(json);
-            recipe += " " + json.sourceUrl;
+            recipe += "<a href=" + json.sourceUrl + ">" + name + "</a>";
+            //recipe += " " + json.sourceUrl;
             updateResult(recipe);
       });
     }
