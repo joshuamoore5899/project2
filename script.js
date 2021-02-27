@@ -12,7 +12,7 @@ function onClick(e) {
   }
 
   // setup URL
-  let url = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=1582ec83b96441669036ed721e4fd860&ingredients=" + ingredients + "&number=3&ignorePantry=true";
+  let url = "https://api.spoonacular.com/recipes/findByIngredients?apiKey=3fec4c681dcf48e98b4f851a59cf968b&ingredients=" + ingredients + "&number=3&ignorePantry=true";
   //let url = "http://numbersapi.com/" + number + "/" + type + "?json";
   //let url = "http://numbersapi.com/random/year?json";
   // call API
@@ -32,7 +32,7 @@ function onClick(e) {
         let recipe = "";
         let name = json[i].title;
         //updateResult(json[i].title);
-        let url2 = "https://api.spoonacular.com/recipes/" + json[i].id + "/information" + "?apiKey=1582ec83b96441669036ed721e4fd860";
+        let url2 = "https://api.spoonacular.com/recipes/" + json[i].id + "/information" + "?apiKey=3fec4c681dcf48e98b4f851a59cf968b";
         fetch(url2)
           .then(function(response) {
             // make sure the request was successful
@@ -61,12 +61,12 @@ function onClick2(e) {
   //let type = s.options[s.selectedIndex].value;
 
   // check if number is empty
-  if (calories === null) {
-    calories = 2000;
+  if (calories === "") {
+    calories = "2000";
   }
 
   // setup URL
-  let url3 = "https://api.spoonacular.com/mealplanner/generate?apiKey=1582ec83b96441669036ed721e4fd860&timeFrame=day&targetCalories=" + calories;
+  let url3 = "https://api.spoonacular.com/mealplanner/generate?apiKey=3fec4c681dcf48e98b4f851a59cf968b&timeFrame=day&targetCalories=" + calories;
   //let url = "http://numbersapi.com/" + number + "/" + type + "?json";
   //let url = "http://numbersapi.com/random/year?json";
   // call API
@@ -82,9 +82,21 @@ function onClick2(e) {
     }).then(function(json) {
       // update DOM with response
         console.log(json);
-        for (let i = 0; i < json.length; i++) {
-          let plannerOutput = "<a href=" + json[i].sourceUrl + ">" + json[i].title + "</a>";
+        for (let i = 0; i < json.meals.length; i++) {
+          let plannerOutput = "";
+          if (i === 0) {
+            plannerOutput = "Breakfast: <a href=" + json.meals[i].sourceUrl + ">" + json.meals[i].title + "</a>";
+          }
+          if (i === 1) {
+            plannerOutput = "Lunch: <a href=" + json.meals[i].sourceUrl + ">" + json.meals[i].title + "</a>";
+          }
+          if (i === 2) {
+            plannerOutput = "Dinner: <a href=" + json.meals[i].sourceUrl + ">" + json.meals[i].title + "</a>";
+          }
           updateResult2(plannerOutput);
+          console.log(json.meals[i].sourceUrl);
+          console.log(json.meals[i].title);
+          console.log("Yes");
         }
       });
     };
